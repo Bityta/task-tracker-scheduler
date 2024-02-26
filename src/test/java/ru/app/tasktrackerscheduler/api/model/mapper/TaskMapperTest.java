@@ -1,7 +1,5 @@
 package ru.app.tasktrackerscheduler.api.model.mapper;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
 import ru.app.tasktrackerscheduler.api.model.Task;
 import ru.app.tasktrackerscheduler.api.model.dto.TaskDtoView;

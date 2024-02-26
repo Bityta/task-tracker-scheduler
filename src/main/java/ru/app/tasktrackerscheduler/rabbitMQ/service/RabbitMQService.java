@@ -6,14 +6,6 @@ import org.springframework.stereotype.Service;
 import ru.app.tasktrackerscheduler.rabbitMQ.model.dto.EmailDto;
 import ru.app.tasktrackerscheduler.rabbitMQ.repository.RabbitMQRepository;
 
-
-
-import org.springframework.stereotype.Service;
-import ru.app.tasktrackerscheduler.rabbitMQ.model.dto.EmailDto;
-import ru.app.tasktrackerscheduler.rabbitMQ.repository.RabbitMQRepository;
-
-import lombok.RequiredArgsConstructor;
-
 /**
  * Service for sending messages through RabbitMQ.
  */

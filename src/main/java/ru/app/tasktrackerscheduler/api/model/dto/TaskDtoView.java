@@ -1,7 +1,6 @@
 package ru.app.tasktrackerscheduler.api.model.dto;
 
 import lombok.Builder;
-import lombok.Data;
 import lombok.Getter;
 
 /**

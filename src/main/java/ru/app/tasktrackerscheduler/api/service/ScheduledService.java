@@ -23,10 +23,10 @@ import java.util.function.Predicate;
 @RequiredArgsConstructor
 public class ScheduledService {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(ScheduledService.class);
     private final UserService userService;
     private final RabbitMQService rabbitMQService;
     private final TaskMapper taskMapper;
-    private static final Logger LOGGER = LoggerFactory.getLogger(ScheduledService.class);
 
     /**
      * Method for sending daily statistical email reports every 5 minutes.
