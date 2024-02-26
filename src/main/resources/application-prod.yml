@@ -1,0 +1,24 @@
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+  datasource:
+    url: jdbc:postgresql://postgres:5432/task-tracker-backend
+    username: admin
+    password: admin
+
+#  flyway:
+#    url: jdbc:postgresql://postgres:5432/task-tracker-backend
+#    user: admin
+#    password: admin
+
+
+
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://task-tracker-service-discovery:8761/eureka
+#    fetch-registry: true
+#    register-with-eureka: true
+
