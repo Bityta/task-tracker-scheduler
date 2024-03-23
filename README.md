@@ -1,11 +1,12 @@
 # Task Tracker Scheduler
 
-This is a Spring Boot application designed as a task scheduler with two modules: Spring Scheduler and Spring AMQP.
-
 ## Overview
+
+This Spring Boot application, named "task-tracker-scheduler", serves as a scheduler for task tracking within a larger system. It is configured to run with different profiles depending on the environment: `ide` for local development and `prod` for production.
+
 The main purpose of this service is to iterate through all users once a day and generate reports for them regarding their tasks and any changes within the last 24 hours.
 
-- For users who have unfinished tasks by the end of the day, an email is sent stating "You have N unfinished tasks." The email body contains the titles of these tasks (up to a reasonable limit, e.g., 5).
+- For users who have unfinished tasks by the end of the day, an email is sent stating "You have N unfinished tasks." The email body contains the titles of these tasks.
 - For users who have completed 1 or more tasks in the last 24 hours, an email is sent stating "Today, you completed N tasks." The email body contains the titles of the completed tasks.
 - For users who meet both conditions above, an email is sent with both lists: unfinished and completed tasks within the last 24 hours.
 
@@ -19,22 +20,43 @@ Spring AMQP is responsible for packaging the generated emails into model classes
 
 ## Getting Started
 
-To run the application locally, follow these steps:
+To run the application locally using Docker Compose, follow these steps:
 
 1. Clone the repository: `git clone <repository-url>`
 2. Navigate to the project directory: `cd task-tracker-scheduler`
-3. Build the project: `./mvnw clean install`
-4. Run the application: `./mvnw spring-boot:run`
+3. Build the Docker image: `docker-compose build`
+4. Run the Docker container: `docker-compose up`
 
-Ensure you have RabbitMQ installed and running locally or configure the application to connect to your RabbitMQ instance.
+This will build the Docker image for the application and start the container. Ensure you have RabbitMQ installed and running locally or configure the application to connect to your RabbitMQ instance within the Docker Compose file. Ensure you have PostgreSQL installed and running locally or adjust the database configuration accordingly.
+
+Once the container is up and running, the application will be accessible at `http://localhost:8083`.
 
 ## Configuration
 
-### Spring Scheduler
-- Cron expression: This can be configured in the `application.properties` file to adjust the schedule of the method invocation.
+### Profiles
 
-### Spring AMQP
-- RabbitMQ Connection: Configure RabbitMQ connection details (host, port, credentials) in the `application.properties` file.
+- **ide**: This profile is used for local development. It is configured to run on port `8083` with an PostgreSQL database. The database URL is `jdbc:postgresql://localhost:15432/task-tracker-backend`, and the username and password are both set to `admin`.
+  
+- **prod**: This profile is used for production deployment. It runs on port `8083` as well but connects to a PostgreSQL database. You will need to provide the database URL, username, and password.
+
+Here's an example configuration:
+
+```yaml
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+  datasource:
+    url: jdbc:postgresql://your-database-url:5432/task-tracker-backend
+    username: your-username
+    password: your-password
+```
+
+
+### Spring Scheduler
+- Cron expression: This can be configured in the `application.yml` file to adjust the schedule of the method invocation.
+
 
 ## Dependencies
 - Spring Boot
@@ -45,6 +67,4 @@ Ensure you have RabbitMQ installed and running locally or configure the applicat
 ## Contributing
 Contributions are welcome! Feel free to open issues or pull requests.
 
-## License
-This project is licensed under the [MIT License](LICENSE).
 
