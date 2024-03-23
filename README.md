@@ -10,6 +10,9 @@ The main purpose of this service is to iterate through all users once a day and 
 - For users who have completed 1 or more tasks in the last 24 hours, an email is sent stating "Today, you completed N tasks." The email body contains the titles of the completed tasks.
 - For users who meet both conditions above, an email is sent with both lists: unfinished and completed tasks within the last 24 hours.
 
+Additional project details can be found in the Task Tracker Info.  Please refer to it [here](https://github.com/Bityta/task-tracker-info).
+
+
 ## Modules
 
 ### 1. Spring Scheduler
