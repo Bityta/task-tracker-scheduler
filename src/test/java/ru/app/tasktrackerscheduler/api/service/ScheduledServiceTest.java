@@ -59,8 +59,6 @@ class ScheduledServiceTest {
                 .description("Task Description")
                 .build();
 
-        List<TaskDtoView> tasks = Collections.singletonList(taskDto);
-
         when(taskMapper.map(any())).thenReturn(taskDto);
 
         scheduledService.sendDailyStatsEmails();

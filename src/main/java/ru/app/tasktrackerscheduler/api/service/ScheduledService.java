@@ -29,9 +29,9 @@ public class ScheduledService {
     private final TaskMapper taskMapper;
 
     /**
-     * Method for sending daily statistical email reports every 5 minutes.
+     * Method for sending daily statistical email reports.
      */
-    @Scheduled(cron = "0 0 0 * * *")
+    @Scheduled(cron = "${cron.value}")
     public void sendDailyStatsEmails() {
         List<User> users = userService.getAll();
 

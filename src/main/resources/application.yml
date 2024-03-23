@@ -3,7 +3,7 @@ spring:
     name: task-tracker-scheduler
 
   profiles:
-    active: ide
+    active: prod
 
 
   jpa:
@@ -13,8 +13,10 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
 
-#  flyway:
-#    schemas: admin
+
+cron:
+  value: 0 0 * * *
+
 
 
 logging:
