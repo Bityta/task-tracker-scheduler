@@ -1,7 +1,7 @@
 # Task Tracker Scheduler
 
 ## Overview
-
+1
 This Spring Boot application, named "task-tracker-scheduler", serves as a scheduler for task tracking within a larger system. It is configured to run with different profiles depending on the environment: `ide` for local development and `prod` for production.
 
 The main purpose of this service is to iterate through all users once a day and generate reports for them regarding their tasks and any changes within the last 24 hours.
@@ -42,7 +42,7 @@ Once the container is up and running, the application will be accessible at `htt
 ### Profiles
 
 - **ide**: This profile is used for local development. It is configured to run on port `8083` with an PostgreSQL database. The database URL is `jdbc:postgresql://localhost:15432/task-tracker-backend`, and the username and password are both set to `admin`.
-
+  
 - **prod**: This profile is used for production deployment. It runs on port `8083` as well but connects to a PostgreSQL database. You will need to provide the database URL, username, and password.
 
 Here's an example configuration:
