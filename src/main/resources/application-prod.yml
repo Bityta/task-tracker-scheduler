@@ -1,0 +1,18 @@
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+  datasource:
+    url:
+    username:
+    password:
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://task-tracker-service-discovery:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
+

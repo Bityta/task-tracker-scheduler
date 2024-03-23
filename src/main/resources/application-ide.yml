@@ -1,0 +1,14 @@
+spring:
+  config:
+    activate:
+      on-profile: ide
+
+  datasource:
+    url: jdbc:postgresql://localhost:15432/task-tracker-backend
+    username: admin
+    password: admin
+
+
+server:
+  port: 8083
+
