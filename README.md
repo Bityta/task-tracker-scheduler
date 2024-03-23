@@ -54,6 +54,9 @@ application:
     profiles:
       active: your-profile
   ```
+Path to the application.yml file: src\main\resources
+
+
 Replace your-profile with an ide or prod
 
 Here's an example configuration:
