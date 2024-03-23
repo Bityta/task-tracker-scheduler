@@ -1,7 +1,7 @@
 # Task Tracker Scheduler
 
 ## Overview
-1
+
 This Spring Boot application, named "task-tracker-scheduler", serves as a scheduler for task tracking within a larger system. It is configured to run with different profiles depending on the environment: `ide` for local development and `prod` for production.
 
 The main purpose of this service is to iterate through all users once a day and generate reports for them regarding their tasks and any changes within the last 24 hours.
