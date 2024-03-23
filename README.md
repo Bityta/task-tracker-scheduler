@@ -45,6 +45,14 @@ Once the container is up and running, the application will be accessible at `htt
   
 - **prod**: This profile is used for production deployment. It runs on port `8083` as well but connects to a PostgreSQL database. You will need to provide the database URL, username, and password.
 
+To select a profile, go to application.yml and change the spring:
+```yaml
+application:
+    profiles:
+      active: your-profile
+  ```
+Replace your-profile with an ide or prod
+
 Here's an example configuration:
 
 ```yaml
