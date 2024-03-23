@@ -44,7 +44,7 @@ Once the container is up and running, the application will be accessible at `htt
 
 ### Profiles
 
-- **ide**: This profile is used for local development. It is configured to run on port `8083` with an PostgreSQL database. The database URL is `jdbc:postgresql://localhost:15432/task-tracker-backend`, and the username and password are both set to `admin`.
+- **ide**: This profile is used for local development. It is configured to run on port `8083` with an PostgreSQL database. The database URL is `jdbc:postgresql://localhost:15432/task-tracker-backend`.
   
 - **prod**: This profile is used for production deployment. It runs on port `8083` as well but connects to a PostgreSQL database. You will need to provide the database URL, username, and password.
 
@@ -62,17 +62,11 @@ Replace your-profile with an ide or prod
 Here's an example configuration:
 
 ```yaml
-spring:
-  config:
-    activate:
-      on-profile: prod
-
   datasource:
-    url: jdbc:postgresql://your-database-url:5432/task-tracker-backend
     username: your-username
     password: your-password
 ```
-Replace your-database-url, your-username, and your-password with the actual URL, username, and password for your PostgreSQL database.
+Replace your-username, and your-password with the actual username, and password for your PostgreSQL database.
 
 ### Spring Scheduler
 - Cron expression: This can be configured in the `application.yml` file to adjust the schedule of the method invocation.
