@@ -5,8 +5,8 @@ spring:
 
   datasource:
     url: jdbc:postgresql://localhost:15432/task-tracker-backend
-    username: admin
-    password: admin
+    username: 
+    password: 
 
 
 server:
