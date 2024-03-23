@@ -20,7 +20,10 @@ Spring AMQP is responsible for packaging the generated emails into model classes
 
 ## Getting Started
 
-Before running the task-tracker-scheduler microservice, ensure that the task-email-sender microservice is running, as it is required for proper functionality.
+Before starting the `task-tracker-scheduler` microservice, ensure that the `task-email-sender` microservice is up and running, as it is required for proper functionality.
+
+You can find the `task-email-sender` microservice [here](https://github.com/Bityta/task-tracker-email-sender).
+
 
 To run the application locally using Docker Compose, follow these steps:
 
