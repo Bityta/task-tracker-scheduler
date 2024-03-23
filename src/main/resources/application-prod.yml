@@ -4,7 +4,7 @@ spring:
       on-profile: prod
 
   datasource:
-    url:
+    url: jdbc:postgresql://postgres:5432/task-tracker-backend
     username:
     password:
 
