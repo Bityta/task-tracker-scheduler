@@ -20,14 +20,17 @@ Spring AMQP is responsible for packaging the generated emails into model classes
 
 ## Getting Started
 
+Before running the task-tracker-scheduler microservice, ensure that the task-email-sender microservice is running, as it is required for proper functionality.
+
 To run the application locally using Docker Compose, follow these steps:
 
 1. Clone the repository: `git clone <repository-url>`
 2. Navigate to the project directory: `cd task-tracker-scheduler`
-3. Build the Docker image: `docker-compose build`
-4. Run the Docker container: `docker-compose up`
+3. Configure your desired profile by uncommenting the corresponding section in the application.yml file.
+4. Build the Docker image: `docker-compose build`
+5. Run the Docker container: `docker-compose up`
 
-This will build the Docker image for the application and start the container. Ensure you have RabbitMQ installed and running locally or configure the application to connect to your RabbitMQ instance within the Docker Compose file. Ensure you have PostgreSQL installed and running locally or adjust the database configuration accordingly.
+This will build the Docker image for the application and start the container.
 
 Once the container is up and running, the application will be accessible at `http://localhost:8083`.
 
@@ -52,7 +55,7 @@ spring:
     username: your-username
     password: your-password
 ```
-
+Replace your-database-url, your-username, and your-password with the actual URL, username, and password for your PostgreSQL database.
 
 ### Spring Scheduler
 - Cron expression: This can be configured in the `application.yml` file to adjust the schedule of the method invocation.
@@ -63,6 +66,8 @@ spring:
 - Spring Scheduler
 - Spring AMQP
 - RabbitMQ
+- Spring Data JPA
+- Spring Cloud Eureka Client
 
 ## Contributing
 Contributions are welcome! Feel free to open issues or pull requests.
